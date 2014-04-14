@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib import admin
 
 class Student(models.Model):
     id = models.IntegerField(primary_key=True)
@@ -10,6 +11,6 @@ class Student(models.Model):
 
     class Meta:
         ordering = ["sname"]
-    class Admin:
-        pass
+admin.site.register(Student)
+    
 
