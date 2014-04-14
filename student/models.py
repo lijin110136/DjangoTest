@@ -10,3 +10,6 @@ class Student(models.Model):
 
     class Meta:
         ordering = ["sname"]
+    class Admin:
+        pass
+
