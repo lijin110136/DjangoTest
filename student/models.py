@@ -5,6 +5,9 @@ class Student(models.Model):
     id = models.IntegerField(primary_key=True)
     sname = models.CharField(max_length=100)
     sage = models.IntegerField(max_length=10)
+    email = models.EmailField()
+    visit_date = models.DateTimeField()
+    desc = models.TextField()
 
     def __unicode__(self):
         return self.sname
