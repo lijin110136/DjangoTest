@@ -11,6 +11,11 @@ class Student(models.Model):
 
     class Meta:
         ordering = ["sname"]
-admin.site.register(Student)
+class StudentAdmin(admin.ModelAdmin):
+    list_display = ('id', 'sname', 'sage')
+    list_filter = ('sname',)
+    search_fields = ('sname',)
+    ordering = ('-id',)
+admin.site.register(Student, StudentAdmin)
     
 
