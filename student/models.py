@@ -6,7 +6,7 @@ class Student(models.Model):
     sname = models.CharField(max_length=100)
     sage = models.IntegerField(max_length=10)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.sname
 
     class Meta:
