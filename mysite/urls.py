@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from mysite.view import current_datetime
+from student.views import search
 from django.contrib import admin
 admin.autodiscover()
 
@@ -10,5 +11,5 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     (r'^time/$', current_datetime),
-    
+    (r'^search/$', search),
 )
