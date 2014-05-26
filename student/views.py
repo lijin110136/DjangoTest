@@ -13,3 +13,6 @@ def search(request):
     else:
         results = []
     return render_to_response('search/search.html', {"results": results, "query": query})
+def list(request):
+    results = Student.objects.distinct()
+    return render_to_response("")

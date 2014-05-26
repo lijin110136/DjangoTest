@@ -26,8 +26,16 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/')
+    #os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/')
+    'templates',
 )
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+    #     'django.template.loaders.eggs.Loader',
+    )
+
 
 ALLOWED_HOSTS = []
 
