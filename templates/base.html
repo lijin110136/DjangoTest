@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.css"/>
+    <script src="{{ STATIC_URL }}js/jquery-1.11.1.min.js"></script>
+    <title>{% block title %}{% endblock %}</title>
+
+    {% block header_js %}{% endblock %}
+    {% block header_css %}{% endblock %}
+</head>
+<body>
+    {% if error_message %}
+        <div class="alert alert-block">
+            <p><strong>{{ error_message }}</strong></p>
+        </div>
+    {% endif %}
+
+    <div id="content" class="container" align="center">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

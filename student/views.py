@@ -1,6 +1,7 @@
 # -*- coding: UTF-8 -*-
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
+from django.template import RequestContext
 from django.db.models import Q
 from models import Student
 # Create your views here.
@@ -15,4 +16,5 @@ def search(request):
     return render_to_response('search/search.html', {"results": results, "query": query})
 def list(request):
     results = Student.objects.distinct()
-    return render_to_response("")
+    return render_to_response("student/list.html", {"lists" : results},
+                               context_instance=RequestContext(request))

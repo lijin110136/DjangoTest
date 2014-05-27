@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}学生信息{% endblock %}
+{% block content %}
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>Email</th>
+            <th>最后一次登录时间</th>
+            <th>评价</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for student in lists %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.sname }}</td>
+                <td>{{ student.sage }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.visit_date }}</td>
+                <td>{{ student.desc }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+{% endblock %}
