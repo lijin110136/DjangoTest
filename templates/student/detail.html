@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}学生详细信息{% endblock %}
+{% block content %}
+    <h1 class="h1">详细信息</h1>
+    <table class="project-detail table table-bordered" style="table-layout:fixed">
+        <tr>
+            <td class="title" width="22%">姓名</td>
+            <td width="78%">{{ student.sname }}</td>
+        </tr>
+        <tr>
+            <td class="title" width="22%">年龄</td>
+            <td width="78%">{{ student.sage }}</td>
+        </tr>
+        <tr>
+            <td class="title" width="22%">Email</td>
+            <td width="78%">{{ student.email }}</td>
+        </tr>
+        <tr>
+            <td class="title" width="22%">最后一次登录时间</td>
+            <td width="78%">{{ student.visit_date }}</td>
+        </tr>
+        <tr>
+            <td class="title" width="22%">评价</td>
+            <td width="78%">{{ student.desc }}</td>
+        </tr>
+
+    </table>
+{% endblock %}

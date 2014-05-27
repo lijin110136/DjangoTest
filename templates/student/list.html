@@ -2,6 +2,11 @@
 {% block title %}学生信息{% endblock %}
 {% block content %}
     <h1 class="h1">学生信息</h1>
+    <div class="btn-container">
+        <span class="backward btn btn-default ml50"> <i class="fa fa-fast-backward"></i>
+            新增
+        </span>
+    </div>
     <table class="table table-bordered table-striped">
         <thead>
         <tr>
@@ -25,6 +30,7 @@
                 <td>{{ student.desc }}</td>
                 <td>
                     <button class="btn btn-primary btn-sm" type="button"  onclick="window.location.href='delete/{{ student.id }}/'">删除</button>
+                     <button class="btn btn-primary btn-sm" type="button"  onclick="window.location.href='detail/{{ student.id }}/'">查看</button>
                 </td>
             </tr>
         {% endfor %}

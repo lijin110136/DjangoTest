@@ -20,8 +20,12 @@ def list(request):
     results = Student.objects.distinct().order_by('id')
     return render_to_response("student/list.html", {"lists" : results},
                                context_instance=RequestContext(request))
-
 def delete(request, id):
     student = Student.objects.get(id=id)
     student.delete()
     return HttpResponseRedirect('/myapp/student/list')
+
+def detail(request, id):
+    student = Student.objects.get(id=id)
+    params = {"student" : student}
+    return render_to_response("student/detail.html", params,context_instance=RequestContext(request))
